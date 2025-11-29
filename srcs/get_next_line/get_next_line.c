@@ -6,7 +6,7 @@
 /*   By: dminh <dminh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:53:52 by dminh             #+#    #+#             */
-/*   Updated: 2025/11/26 14:23:52 by dminh            ###   ########.fr       */
+/*   Updated: 2025/11/29 16:46:37 by dminh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,15 @@ char	*ft_read_line(char *res, int fd)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*res;
+	static char	*res[1024];
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	res = ft_read_line(res, fd);
-	if (!res)
+	res[fd] = ft_read_line(res[fd], fd);
+	if (!res[fd])
 		return (NULL);
-	line = ft_set_line(res);
-	res = ft_del_printed(res);
+	line = ft_set_line(res[fd]);
+	res[fd] = ft_del_printed(res[fd]);
 	return (line);
 }
 //
