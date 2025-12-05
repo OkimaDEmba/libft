@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dminh <dminh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/18 17:07:19 by dminh             #+#    #+#             */
-/*   Updated: 2025/12/03 16:10:46 by dminh            ###   ########.fr       */
+/*   Created: 2025/12/05 18:36:40 by dminh             #+#    #+#             */
+/*   Updated: 2025/12/05 18:42:57 by dminh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../../include/libft.h"
 
-# include <stdarg.h>
-# include "libft.h"
+char	*ft_strncat(char *dest, const char *src, size_t n)
+{
+	size_t	i;
+	size_t	j;
 
-int	ft_printf(const char *spec, ...);
-int	ft_putchar_len(int c);
-int	ft_putstr_len(char *str);
-int	ft_putnbr_len(int n);
-int	ft_putlong_len(long n);
-int	ft_putnbr_hex(unsigned int n, int spec);
-int	ft_putptr_len(size_t ptr);
-int	ft_putudec_len(unsigned int n);
-#endif
+	if (!src || !dest)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (dest[i])
+		i++;
+	while (src[j] && j < n)
+		dest[i++] = src[j++];
+	dest[i] = '\0';
+	return (dest);
+}

@@ -6,7 +6,7 @@
 /*   By: dminh <dminh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:49:41 by dminh             #+#    #+#             */
-/*   Updated: 2025/11/22 10:53:12 by dminh            ###   ########.fr       */
+/*   Updated: 2025/12/03 16:10:01 by dminh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	ft_print_spec(char spec, va_list ap)
 		return (ft_putudec_len(va_arg(ap, unsigned int)));
 	else if (spec == '%')
 		return (write(1, "%", 1));
+	else if (spec == '@')
+		return (ft_putlong_len(va_arg(ap, long)));
 	return (0);
 }
 

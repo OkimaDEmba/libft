@@ -6,7 +6,7 @@
 /*   By: dminh <dminh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 12:05:59 by dminh             #+#    #+#             */
-/*   Updated: 2025/11/20 17:19:44 by dminh            ###   ########.fr       */
+/*   Updated: 2025/12/03 16:11:59 by dminh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,16 @@ int	ft_putnbr_len(int n)
 	}
 	free(number);
 	return (len);
+}
+
+int	ft_putlong_len(long n)
+{
+	int	written;
+
+	written = 0;
+	if (n > 9)
+		written += ft_putlong_len(n / 10);
+	return (written += ft_putchar_len(n % 10 + 48));
 }
 
 int	ft_putudec_len(unsigned int n)
