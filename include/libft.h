@@ -6,7 +6,7 @@
 /*   By: dminh <dminh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 23:42:26 by dminh             #+#    #+#             */
-/*   Updated: 2025/12/05 18:41:24 by dminh            ###   ########.fr       */
+/*   Updated: 2025/12/10 18:02:32 by dminh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,20 @@
 # include <stdint.h>
 # include <unistd.h>
 # include <signal.h>
-
-//-----------------------------MY HEADERS------------------------------
-
 # include "get_next_line.h"
 # include "ft_printf.h"
+
+//------------------------------MINITALK STRUCT------------------------------
+
+typedef struct s_msg
+{
+	int				count;
+	int				nb_char;
+	unsigned char	c;
+	char			*msg;
+}					t_msg;
+
+//--------------------------------MY HEADERS---------------------------------
 
 typedef struct s_list
 {
@@ -51,9 +60,12 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *str, int c, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr(int n);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
