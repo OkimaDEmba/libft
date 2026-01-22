@@ -6,11 +6,11 @@
 /*   By: dminh <dminh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:49:41 by dminh             #+#    #+#             */
-/*   Updated: 2025/12/03 16:10:01 by dminh            ###   ########.fr       */
+/*   Updated: 2026/01/22 16:32:55 by dminh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_print_spec(char spec, va_list ap)
 {

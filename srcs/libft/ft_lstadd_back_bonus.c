@@ -6,11 +6,11 @@
 /*   By: dminh <dminh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 00:14:07 by dminh             #+#    #+#             */
-/*   Updated: 2025/11/21 13:44:26 by dminh            ###   ########.fr       */
+/*   Updated: 2026/01/22 16:32:59 by dminh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {

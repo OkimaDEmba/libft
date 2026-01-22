@@ -6,11 +6,11 @@
 /*   By: dminh <dminh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:14:54 by dminh             #+#    #+#             */
-/*   Updated: 2025/11/21 09:20:53 by dminh            ###   ########.fr       */
+/*   Updated: 2026/01/22 16:32:59 by dminh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 static size_t	ft_get_size(int n)
 {

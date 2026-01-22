@@ -6,11 +6,11 @@
 /*   By: dminh <dminh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 11:37:59 by dminh             #+#    #+#             */
-/*   Updated: 2025/11/21 09:22:06 by dminh            ###   ########.fr       */
+/*   Updated: 2026/01/22 16:33:07 by dminh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 static int	count_words(const char *s, char c)
 {

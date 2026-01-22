@@ -46,11 +46,17 @@ OBJ_FT_PRINTF := $(FT_PRINTF_PATH:.c=.o)
 
 ALL_OBJ := $(OBJ_LIBFT) $(OBJ_BONUS) $(OBJ_GNL) $(OBJ_FT_PRINTF)
 
+INCLUDES := ./includes/
+
 CC := cc
 
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra -Werror -I$(INCLUDES)
+
 
 all: $(NAME) bonus
+
+%.o: %.c
+	@echo "[COMPILING] $@";$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(ALL_OBJ)
 	@ar rcs $(NAME) $(ALL_OBJ)
@@ -62,14 +68,16 @@ bonus: $(OBJ_BONUS)
 	@ar rcs $(NAME) $(OBJ_BONUS)
 
 clean:
+	@printf "[DELETING] %s\n" $(ALL_OBJ)
 	@rm -f $(ALL_OBJ)
-	@echo "-------------------------------------------------"
-	@echo "|	   Removed all object files ✅	 	|"
-	@echo "-------------------------------------------------"
 
 fclean: clean
-	rm -f $(NAME)
+	@printf "[DELETING] %s\n", $(NAME)
+	@rm -f $(NAME)
+	@echo "-------------------------------------------------"
+	@echo "|	   Removed libft archive ✅	 	|"
+	@echo "-------------------------------------------------"
 re: fclean all
 
 .SILENT: $(ALL_OBJ)
-.PHONY: all $(NAME) bonus clean fclean re
+.PHONY: all bonus clean fclean re

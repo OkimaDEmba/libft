@@ -6,13 +6,13 @@
 /*   By: dminh <dminh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 17:37:35 by dminh             #+#    #+#             */
-/*   Updated: 2025/12/10 17:38:20 by dminh            ###   ########.fr       */
+/*   Updated: 2026/01/22 16:33:07 by dminh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "../../include/libft.h"
+#include  "libft.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	return (write(1, &c, 1));
 }

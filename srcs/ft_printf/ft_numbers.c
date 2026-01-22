@@ -6,11 +6,11 @@
 /*   By: dminh <dminh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 12:05:59 by dminh             #+#    #+#             */
-/*   Updated: 2025/12/03 16:11:59 by dminh            ###   ########.fr       */
+/*   Updated: 2026/01/22 16:32:53 by dminh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_putnbr_len(int n)
 {

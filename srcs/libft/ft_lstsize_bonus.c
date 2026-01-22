@@ -6,11 +6,11 @@
 /*   By: dminh <dminh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 00:03:45 by dminh             #+#    #+#             */
-/*   Updated: 2025/11/21 13:44:32 by dminh            ###   ########.fr       */
+/*   Updated: 2026/01/22 16:33:04 by dminh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {

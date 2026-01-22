@@ -6,7 +6,7 @@
 /*   By: dminh <dminh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 23:42:26 by dminh             #+#    #+#             */
-/*   Updated: 2025/12/10 18:02:32 by dminh            ###   ########.fr       */
+/*   Updated: 2025/12/12 13:37:27 by dminh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,14 @@
 # include <stdint.h>
 # include <unistd.h>
 # include <signal.h>
+# include <limits.h>
+
+//--------------------------------MY HEADERS---------------------------------
+
 # include "get_next_line.h"
 # include "ft_printf.h"
 
-//------------------------------MINITALK STRUCT------------------------------
-
-typedef struct s_msg
-{
-	int				count;
-	int				nb_char;
-	unsigned char	c;
-	char			*msg;
-}					t_msg;
-
-//--------------------------------MY HEADERS---------------------------------
+//---------------------------------FUNCTIONS---------------------------------
 
 typedef struct s_list
 {
@@ -52,6 +46,13 @@ int		ft_toupper(int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_lstsize(t_list *lst);
+int		ft_putchar(char c);
+int		ft_putchar_fd(char c, int fd);
+int		ft_putstr_fd(char *s, int fd);
+int		ft_putendl_fd(char *s, int fd);
+int		ft_putnbr_fd(int n, int fd);
+int		ft_putnbr(int n);
+int		ft_putnbr_fd(int n, int fd);
 
 void	*ft_memset(void *dest, int c, size_t count);
 void	ft_bzero(void *str, size_t n);
@@ -60,13 +61,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *str, int c, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-void	ft_putchar(char c);
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putnbr(int n);
-void	ft_putnbr_fd(int n, int fd);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));

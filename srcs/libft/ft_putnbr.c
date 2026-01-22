@@ -6,17 +6,19 @@
 /*   By: dminh <dminh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:15:17 by dminh             #+#    #+#             */
-/*   Updated: 2025/12/10 17:40:29 by dminh            ###   ########.fr       */
+/*   Updated: 2026/01/22 16:39:17 by dminh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "libft.h"
 
-void	ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
 	long	i;
+	int		count;
 
 	i = n;
+	count = 0;
 	if (i < 0)
 	{
 		i = -i;
@@ -24,5 +26,6 @@ void	ft_putnbr(int n)
 	}
 	if (i > 9)
 		ft_putnbr(i / 10);
-	ft_putchar(i % 10 + 48);
+	count += ft_putchar(i % 10 + 48);
+	return (count);
 }

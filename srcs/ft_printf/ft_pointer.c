@@ -6,11 +6,11 @@
 /*   By: dminh <dminh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 18:05:31 by dminh             #+#    #+#             */
-/*   Updated: 2025/11/20 17:22:19 by dminh            ###   ########.fr       */
+/*   Updated: 2026/01/22 16:32:54 by dminh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_hex_ptr(unsigned long long ptr)
 {

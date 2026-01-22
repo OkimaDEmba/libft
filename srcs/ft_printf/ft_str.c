@@ -6,11 +6,11 @@
 /*   By: dminh <dminh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 11:52:12 by dminh             #+#    #+#             */
-/*   Updated: 2025/11/21 10:45:28 by dminh            ###   ########.fr       */
+/*   Updated: 2026/01/22 16:32:55 by dminh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_putchar_len(int c)
 {
