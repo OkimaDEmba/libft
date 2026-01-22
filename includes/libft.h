@@ -54,6 +54,8 @@ int		ft_putnbr_fd(int n, int fd);
 int		ft_putnbr(int n);
 int		ft_putnbr_fd(int n, int fd);
 
+long	ft_atol(char *str);
+
 void	*ft_memset(void *dest, int c, size_t count);
 void	ft_bzero(void *str, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
