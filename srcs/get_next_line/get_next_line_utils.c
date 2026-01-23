@@ -6,7 +6,7 @@
 /*   By: dminh <dminh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:53:55 by dminh             #+#    #+#             */
-/*   Updated: 2026/01/22 02:02:54 by dminh            ###   ########.fr       */
+/*   Updated: 2026/01/23 19:57:31 by dminh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ char	*ft_is_nl(char *str)
 char	*ft_set_line(char *s1, char *s2, size_t *len)
 {
 	char	*joined;
+	ssize_t	i;
 	size_t	s2_len;
-	size_t	i;
 
 	if (!s2 || !s2[0])
-		return (NULL);
+		return (free(s1), NULL);
 	s2_len = 0;
 	while (s2[s2_len] && s2[s2_len] != '\n')
 		s2_len++;
@@ -45,16 +45,15 @@ char	*ft_set_line(char *s1, char *s2, size_t *len)
 	if (!joined)
 		return (free(s1), NULL);
 	i = -1;
-	while (++i < *len)
+	while (++i < (ssize_t)(*len))
 		joined[i] = s1[i];
-	s2_len = 0;
-	while (s2[s2_len] && s2[s2_len] != '\n')
-		joined[i++] = s2[s2_len++];
-	if (s2[s2_len] == '\n')
-		joined[i++] = s2[s2_len++];
-	joined[i] = '\0';
+	i = -1;
+	while (++i < (ssize_t)s2_len)
+		joined[i + (ssize_t)(*len)] = s2[i];
+	joined[i + (ssize_t)(*len)] = '\0';
 	*len += s2_len;
-	return (free(s1), joined);
+	free(s1);
+	return (joined);
 }
 
 void	ft_del_printed(char *buffer)
@@ -68,11 +67,12 @@ void	ft_del_printed(char *buffer)
 	{
 		if (buffer[i] == '\n')
 		{
-			while (buffer[i])
-				buffer[j++] = buffer[++i];
+			while (buffer[++i])
+				buffer[j++] = buffer[i];
 			buffer[j] = '\0';
 			return ;
 		}
 		i++;
 	}
+	buffer[0] = '\0';
 }
